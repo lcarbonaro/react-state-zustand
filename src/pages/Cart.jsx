@@ -2,10 +2,7 @@ import useCartStore from '../state/CartStore';
 
 function Cart() {
     const { products } = useCartStore();
-
-    
-
-
+   
     return (
       <div>
         <p>Shopping Cart</p>
