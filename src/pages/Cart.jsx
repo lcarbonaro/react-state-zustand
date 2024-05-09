@@ -8,7 +8,7 @@ function Cart() {
         <p>Shopping Cart</p>
         <p>You have {products.length} product(s) in your cart.</p>
 
-        {products.length>0 ? <button onClick={() => clearProducts() }>Clear Cart</button> : ''}
+        {products.length>0 ? <button onClick={clearProducts}>Clear Cart</button> : ''}
         
         {products.map(product => (
             <div key={product.id}>
