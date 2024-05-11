@@ -7,6 +7,7 @@ function Cart() {
       <div>
         <p>Shopping Cart</p>
         <p>You have {products.length} product(s) in your cart.</p>
+        <p>Cart Total:${ products.reduce((t,p)=>t+=(p.qty*p.price),0) }</p>
 
         {products.length>0 ? <button onClick={clearProducts}>Clear Cart</button> : ''}
         
