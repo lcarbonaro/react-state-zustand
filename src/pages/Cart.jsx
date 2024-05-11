@@ -1,7 +1,7 @@
 import useCartStore from '../state/CartStore';
 
 function Cart() {
-    const { products, removeProduct, clearProducts } = useCartStore();
+    const { products, removeProduct, clearProducts, incrementQty, decrementQty } = useCartStore();
    
     return (
       <div>
@@ -14,7 +14,12 @@ function Cart() {
             <div key={product.id}>
                 <p><img className="prod-image-small" src={product.image} alt={product.description} /></p>
                 <p>{product.title} @ ${product.price}</p>
-                <p>qty: {product.qty}</p>
+                <p>
+                  Qty:{product.qty} &nbsp;
+                  <button onClick={() => incrementQty(product.id) }>+</button> &nbsp;
+                  <button onClick={() => decrementQty(product.id) }>-</button> &nbsp; 
+                  Sub-total:${product.qty * product.price}
+                </p>
                 <button onClick={() => removeProduct(product.id) }>Remove</button>
             </div>
         ))}
